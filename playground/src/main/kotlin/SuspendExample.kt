@@ -24,6 +24,8 @@ fun doOne() {
 // runBlocking<Int> 등을 이용해 코루틴 반환타입을 지정할 수 있다.
 fun main() = runBlocking<Unit> {
     launch {
+        // launch 블럭 내에서 this는 코루틴.
+        // launch는 코루틴 내에서만 유효하다 -> runBlocking 블럭 밖에서 선언되었다면 동작하지 않음
         doThree()
     }
     launch {
